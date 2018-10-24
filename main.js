@@ -1,5 +1,7 @@
 var button= document.querySelector('.start');
 var print= document.querySelector('.path');
+var printx = 0;
+var printY = 0;
 
 var array= new Array(30);
 array[0]= [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -17,7 +19,7 @@ array[11]= [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 array[12]= [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 array[13]= [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 array[14]= [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-array[15]= [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+array[15]= [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 array[16]= [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 array[17]= [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 array[18]= [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -38,13 +40,6 @@ function clickButton(){
     print.innerHTML= '['+array[0].join(" ")+']'+'<br/>'+'['+array[1].join(" ")+']'+'<br/>'+'['+array[2].join(" ")+']'+'<br/>'+'['+array[3].join(" ")+']'+'<br/>'+'['+array[4].join(" ")+']'+'<br/>'+'['+array[5].join(" ")+']'+'<br/>'+'['+array[6].join(" ")+']'+'<br/>'+'['+array[7].join(" ")+']'+'<br/>'+'['+array[8].join(" ")+']'+'<br/>'+'['+array[9].join(" ")+']'+'<br/>'+'['+array[10].join(" ")+']'+'<br/>'+'['+array[11].join(" ")+']'+'<br/>'+'['+array[12].join(" ")+']'+'<br/>'+'['+array[13].join(" ")+']'+'<br/>'+'['+array[14].join(" ")+']'+'<br/>'+'['+array[15].join(" ")+']'+'<br/>'+'['+array[16].join(" ")+']'+'<br/>'+'['+array[17].join(" ")+']'+'<br/>'+'['+array[18].join(" ")+']'+'<br/>'+'['+array[19].join(" ")+']'+'<br/>'+'['+array[20].join(" ")+']'+'<br/>'+'['+array[21].join(" ")+']'+'<br/>'+'['+array[22].join(" ")+']'+'<br/>'+'['+array[23].join(" ")+']'+'<br/>'+'['+array[24].join(" ")+']'+'<br/>'+'['+array[25].join(" ")+']'+'<br/>'+'['+array[26].join(" ")+']'+'<br/>'+'['+array[27].join(" ")+']'+'<br/>'+'['+array[28].join(" ")+']'+'<br/>'+'['+array[29].join(" ")+']';
  }
  
- button.addEventListener('click',function(e){
-    clickButton();
- })
-
- var printx = 0;
- var printY = 0;
-
  var move = setInterval(()=>{
     var positionX = 15;
     var positionY = 15;
@@ -55,5 +50,13 @@ function clickButton(){
     array[positionX][positionY] = 1;
     printx = positionX;
     printY = positionY;
-    clickButton();
+
+    
  },1000);
+
+
+ button.addEventListener('click',function(e){
+    clickButton();
+ })
+
+ 
